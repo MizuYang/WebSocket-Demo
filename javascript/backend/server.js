@@ -18,6 +18,7 @@ wss.on('connection', (ws, req) => {
   console.log('[後端] - 連線成功', id)
 
   ws.on('message', msg => {
+    console.log(msg)
 
     let clients = wss.clients
     // 使用循環向每個客戶端發送訊息
