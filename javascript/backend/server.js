@@ -15,6 +15,8 @@ const wss = new ServerSocket({ server })
 wss.on('connection', (ws, req) => {
   // 給每個連線的客戶端一個獨立的 id
   const id = req.headers['sec-websocket-key']
+  if (!ws.id) ws.send(`你連線成功 ${id}`) 
+    ws.id = id
   console.log('[後端] - 連線成功', id)
 
   ws.on('message', msg => {

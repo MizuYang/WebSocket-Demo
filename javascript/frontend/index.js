@@ -32,10 +32,10 @@ function disconnect() {
   ws.addEventListener('close', onClose)
 }
 function sendMessage() {
-   if(sendMsgEl.value) ws.send('[前端] - 傳送訊息給前端')
+  if (sendMsgEl.value) ws.send(sendMsgEl.value)
 }
-function onMessage (e) {
-  console.log('[前端] - 收到後端的訊息: ', e)
+function onMessage (evt) {
+  console.log('[前端] - 收到後端的訊息: ', evt.data)
 }
 function onClose () {
   console.log('[前端] - 連線中斷')
