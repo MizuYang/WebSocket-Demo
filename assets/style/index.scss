@@ -1,0 +1,8 @@
+.connectStatusText {
+  &.not-connected {
+    color: #797979;
+  }
+  &.connected {
+    color: #27bd16;
+  }
+}
